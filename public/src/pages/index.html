@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../images/logo1.png" type="image/png">
+        <title>The Nerdy Blog</title>
+        <link rel="stylesheet" href="../output.css">
+        <script src="../scripts/search.js" defer></script>
+</head>
+
+<body class="h-full">
+        <div id="loadingScreen" class="hidden">
+                <div class="spinner"></div>
+        </div>
+
+        <div class="wrapper min-h-[100vh] flex flex-col">
+                <!-- Navbar -->
+                <nav>
+                        <div class="navbar bg-base-100">
+                                <div class="flex-1">
+                                        <a href="./index.html" class="btn btn-ghost text-xl"><img
+                                                        src="../images/logo.svg" alt="" height="50" width="50"></a>
+                                </div>
+                                <div class="flex-none gap-2">
+                                        <div class="dropdown dropdown-end">
+                                                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                                                        <div class="w-10 rounded-full">
+                                                                <img alt="Avatar" src="../images/profile-avatar.png" />
+                                                        </div>
+                                                </div>
+                                                <ul tabindex="0"
+                                                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                                                        <li><a href="./admin.html" id="adminBtn">Admin Panel</a></li>
+                                                        <li><a href="./login.html" id="loginBtn">Login</a></li>
+                                                        <li><a href="#" id="logoutBtn">Logout</a></li>
+                                                </ul>
+                                        </div>
+                                </div>
+                        </div>
+                </nav>
+
+                <!-- Search Bar -->
+                <div class="mx-7 md:mx-44 lg:mx-96">
+                        <label class="input input-bordered flex items-center gap-2">
+                                <input type="text" id="search-input" class="grow" placeholder="Search..." />
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                                        class="h-4 w-4 opacity-70">
+                                        <path fill-rule="evenodd"
+                                                d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+                                                clip-rule="evenodd" />
+                                </svg>
+                        </label>
+                </div>
+
+                <section class="card-container-main flex flex-1 ">
+                        <div
+                                class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 ">
+                                <div class="blog-template mb-10 border-t border-b divide-y hidden">
+                                        <div class="grid py-8 sm:grid-cols-4">
+                                                <div class="mb-4 sm:mb-0">
+                                                        <div
+                                                                class="space-y-1 text-xs font-semibold tracking-wide uppercase">
+                                                                <a href="/" class="category-link"
+                                                                        id="blogCategory">Category</a>
+                                                                <p class="date-published text-gray-400"
+                                                                        id="datePublished">Date Published</p>
+                                                        </div>
+                                                </div>
+                                                <div class="sm:col-span-3 lg:col-span-2">
+                                                        <div class="mb-3">
+                                                                <a href="#" aria-label="Article"
+                                                                        class="inline-block text-gray-300 transition-colors duration-200 hover:text-deep-purple-accent-700 hover:opacity-60 cursor-pointer">
+                                                                        <p class="text-3xl font-extrabold leading-none sm:text-4xl xl:text-4xl"
+                                                                                id="blogTitle">Blog Title</p>
+                                                                </a>
+                                                        </div>
+                                                        <p class="text-info opacity-40" id="blogDescription">Blog
+                                                                Description</p>
+                                                </div>
+
+                                                <!-- Admin buttons -->
+                                                <div class="flex space-x-2 sm:col-span-1 text-right">
+                                                        <button class="btn btn-error" id="editBtn"
+                                                                style="display: none;">Edit</button>
+                                                        <button class="btn btn-error" id="deleteBtn"
+                                                                style="display: none;">Delete</button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </section>
+
+                <div class="divider divider-info opacity-10">This Ain't What You Expected</div>
+                <!-- Footer -->
+                <footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
+                        <nav class="grid grid-flow-col gap-4">
+                                <a class="link link-hover">About us</a>
+                                <a class="link link-hover">Contact</a>
+                                <a class="link link-hover">Jobs</a>
+                                <a class="link link-hover">Press kit</a>
+                        </nav>
+                        <nav>
+                                <div class="grid grid-flow-col gap-4">
+                                        <a>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" class="fill-current">
+                                                        <path
+                                                                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                                                        </path>
+                                                </svg>
+                                        </a>
+                                        <a>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" class="fill-current">
+                                                        <path
+                                                                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                                                        </path>
+                                                </svg>
+                                        </a>
+                                        <a>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" class="fill-current">
+                                                        <path
+                                                                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                                                        </path>
+                                                </svg>
+                                        </a>
+                                </div>
+                        </nav>
+                        <aside>
+                                <p>Copyright © {new Date().getFullYear()} - All rights reserved by ACME Industries Ltd
+                                </p>
+                        </aside>
+                </footer>
+        </div>
+
+        <script src="../scripts/scripts.js"></script>
+        <script src="../scripts/logout.js" defer></script>
+</body>
+
+</html>
